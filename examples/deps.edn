@@ -1,0 +1,4 @@
+{:paths ["src"]
+ :deps {org.clojure/clojure {:mvn/version "1.12.2"}
+        io.pedestal/pedestal.jetty {:mvn/version "0.8.0-rc-2"}
+        cormacc/pedestal-nexus {:local/root "../"}}}
