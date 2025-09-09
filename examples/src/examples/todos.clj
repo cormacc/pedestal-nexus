@@ -69,9 +69,7 @@
         item (get-list-item-by-id state list-id item-id)]
     (if [item]
       [[:http/response :ok item]]
-      [[:http/response :not-found (str "List not found: " list-id " / " item-id)]])
-    (cond-> context
-      item (assoc :result item))))
+      [[:http/response :not-found (str "List not found: " list-id " / " item-id)]])))
 
 (defn todo-create-list-item [{:keys [state request]}]
   (if-let [list-id (get-in request [:path-params :list-id])]

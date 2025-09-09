@@ -46,7 +46,7 @@
 (def nexus-core
   {:nexus/effects
    {:http/response
-    (fn [{:keys [dispatch-data] :as _ctx} _sys status body & {:as headers}]
+    (fn [{:keys [dispatch-data] :as _ctx} _sys status body & {:keys [headers] :or {headers nil}}]
       (let [status-code  (if (keyword? status)
                            (lookup-status-code status)
                            status)]
